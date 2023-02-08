@@ -1,0 +1,23 @@
+
+<h1>Liste de Produits</h1>
+<div class=container>
+  <div class="row">
+
+    <div *ngFor="let product of productList" class="col m4 s6">
+      <div (click)="goToProduct(product)"
+           class="card horizontal">
+        <div class="card-image">
+          <img [src]="product.picture"/>
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>{{product.name}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+

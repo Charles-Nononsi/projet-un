@@ -1,0 +1,42 @@
+<div *ngIf="product" class="row">
+  <div class="col s12 m8 offset-m2">
+    <h2 class="header center">{{ product.name }}</h2>
+    <div class="card horizontal hoverable">
+      <div class="card-image">
+        <img [src]="product.picture" src="">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <table class="bordered striped">
+            <tbody>
+            <tr>
+              <td>Nom</td>
+              <td><strong>{{ product.name }}</strong></td>
+            </tr>
+            <tr><td>Prix</td>
+            <td><strong>{{ product.prix }}</strong></td>
+            </tr>
+            <tr><td>Quantite</td>
+              <td><strong>{{ product.quantite }}</strong></td>
+            </tr>
+            <tr>
+              <td>Types</td>
+              <td>
+                <strong>{{ product.types }}</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>Date de création</td>
+              <td><em>{{ product.created | date:"dd/MM/yyyy" }}</em></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-action">
+          <a (click)="goToProductList()">Retour</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h4 *ngIf='!product' class="center">Aucun produit à afficher !</h4>
